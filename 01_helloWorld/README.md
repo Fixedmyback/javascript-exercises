@@ -10,10 +10,10 @@ This setup should be similar for all of the exercises. The plain javascript file
 
 Let's look at the spec file first:
 ```javascript
-const helloWorld = require('./helloWorld');
+const helloWorld = require('./helloWorld-solution');
 
-describe('Hello World', function() {
-  test('says "Hello, World!"', function() {
+describe('Hello World', function () {
+  test('says "Hello, World!"', function () {
     expect(helloWorld()).toEqual('Hello, World!');
   });
 });
@@ -26,11 +26,12 @@ For now you do not need to worry about how to write tests, but you should try to
 
 so let's look at the javascript file:
 ```javascript
-const helloWorld = function() {
-  return ''
-}
+const helloWorld = function () {
+  return "";
+};
 
-module.exports = helloWorld
+module.exports = helloWorld;
+
 ```
 In this file we have a simple function called helloWorld that returns an empty string... which is exactly what our test was complaining about. The `module.exports` on the last line is how we export the function so that it can be imported with `require()` in the spec file.
 
@@ -40,11 +41,11 @@ Just to make sure, in case you're confused at this point, the test is telling yo
 
 This is what the final function should look like:
 ```javascript
-const helloWorld = function() {
-  return 'Hello, World!'
-}
+const helloWorld = function () {
+  return "Hello, World!";
+};
 
-module.exports = helloWorld
+module.exports = helloWorld;
 ```
 
 For the most part we've set up these tests in such a way that you only have to update or write the code being tested. You should not have to worry about importing or exporting anything at this stage.. so just work around that bit of the code and write what it takes to make them pass!
